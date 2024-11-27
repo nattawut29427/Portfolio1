@@ -34,7 +34,7 @@ export default function Home() {
           <Link href="/about">ABOUT ME</Link>
           <Link href="/my-project">MY PROJECT</Link>
           <Link href="/contrack">CONTACT</Link>
-          <Link href="/resume">RESUME</Link>
+          {/* <Link href="/resume">RESUME</Link> */}
         </div>
 
         {/* Overlay and Gradient Circle */}
