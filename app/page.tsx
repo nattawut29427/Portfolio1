@@ -1,41 +1,24 @@
 "use client";
-import { time } from "./actions/time";
-import { useEffect, useState } from "react";
-import Link from "next/link";
 
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 export default function Home() {
-  const [currentTime, setCurrentTime] = useState('');
-  
-  useEffect(() => {
-    time(setCurrentTime);
-  }, []);
-
   return (
     <>
-    {/* ต้องทำ component  */}
+      {/* ต้องทำ component  */}
       <div className="bg-[#0E1111]  font-body w-screen h-screen relative overflow-hidden flex flex-col justify-center items-center">
         {/* Header */}
-        <div className="text-white flex font-light justify-between text-sm mx-4 sm:mx-10 my-2 absolute top-0 left-0 right-0 z-20">
-          <p>MY PORTFOLIO</p>
-          <p>LOCAL TIME {currentTime}</p>
-          <p>NATTAWUT INTARAPANICH</p>
-        </div>
-
+        <Navbar/>
         {/* Main Text */}
         <div className="flex  flex-col font-light items-center justify-center text-center font-body text-white z-10 text-lg sm:text-2xl lg:text-3xl gap-4 mb-20">
-          <p>HELLO IM “LIST” I'M A DEVELOPER I BUILD MODERN WEB APPS</p>
+          <p>HELLO IM “LIST” IM A DEVELOPER I BUILD MODERN WEB APPS</p>
           <p>WITH NEXT.JS AND TYPESCRIPT.</p>
         </div>
 
         {/* Footer Links */}
         {/* ต้องทำ component  */}
-        <div className="flex  font-body font-light flex-col sm:flex-row justify-center sm:justify-between z-20 gap-16 pr-20 pl-12 text-white text-xs sm:text-sm absolute bottom-28 font-metrophobic">
-          <Link href="/about">ABOUT ME</Link>
-          <Link href="/my-project">MY PROJECT</Link>
-          <Link href="/contrack">CONTACT</Link>
-          {/* <Link href="/resume">RESUME</Link> */}
-        </div>
+        <Footer/>
 
         {/* Overlay and Gradient Circle */}
         <p className="w-screen h-screen bg-black opacity-80 absolute "></p>

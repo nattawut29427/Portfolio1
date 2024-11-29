@@ -1,19 +1,22 @@
+import Footer from "@/app/Components/Footer";
+import Navbar from "@/app/Components/Navbar";
 import React from "react";
 
 function Contrack() {
   const textItem = [
-    { id: 1, social: "EMAIL", hoverText: "NATTAWUTDONOVAN@GMAIL.COM", color: "#FFFFFF", hoverColor: "#FF7878",  link: "mailto:Nattawutdonovan@gmail.com"}, 
-    { id: 2, social: "GIT HUB", hoverText: "NATTAWUT_IN", color: "#FFFFFF", hoverColor: "#85C1FF", link: "https://github.com/nattawut29427"}, 
+    { id: 1, social: "EMAIL", hoverText: "NATTAWUTDONOVAN@GMAIL.COM", color: "#FFFFFF", hoverColor: "#EF5A6F",  link: "mailto:Nattawutdonovan@gmail.com"}, 
+    { id: 2, social: "GIT HUB", hoverText: "NATTAWUT_IN", color: "#FFFFFF", hoverColor: "#A594F9", link: "https://github.com/nattawut29427"}, 
     { id: 3, social: "LINK IN", 
       hoverText: "NATTAWUT INTARAPANICH", 
       color: "#FFFFFF", 
-      hoverColor: "#7EDBA6", 
+      hoverColor: "#4379F2", 
       link: "https:linkedin.com/in/nattawut-intarapanich-39b68b323.com" }, 
-    { id: 4, social: "INTRAGRAM", hoverText: "LIST_XD", color: "#FFFFFF", hoverColor: "#C8A4F9",  link: "https://www.instagram.com/list_xd/" },
+    { id: 4, social: "INTRAGRAM", hoverText: "LIST_XD", color: "#FFFFFF", hoverColor: "#D91656",  link: "https://www.instagram.com/list_xd/" },
   ];
 
   return (
     <div className="font-body min-h-screen flex flex-col justify-between text-white">
+      <Navbar/>
       <main className="flex flex-col items-center gap-16">
         <h1 className="text-3xl font-bold mt-40">CONTACT</h1>
         <div className="text-center text-3xl gap-y-10 flex flex-col">
@@ -42,6 +45,7 @@ function Contrack() {
             </a>
           ))}
         </div>
+        <Footer/>
       </main>
     </div>
   );
