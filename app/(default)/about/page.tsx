@@ -14,7 +14,7 @@ function About() {
           </p>
         </div>
         <div>
-          <h1 className="text-4xl">About me</h1>
+          <h1 className="text-4xl">My Skill</h1>
           <p className="text-xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
             labore eveniet cupiditate veniam dolorem. Enim ducimus libero
