@@ -32,7 +32,7 @@ function Project() {
           {projectItems.map((project) => (
             <div
               key={project.id}
-              className="relative w-[90%] max-w-[700px] h-[450px] md:w-[500px] md:h-[500px] cursor-pointer rounded-lg overflow-hidden hover:w-[550px] hover:h-[550px] duration-300"
+              className="relative w-[90%] xl:max-w-[700px] xl:h-[450px] md:w-[400px] md:h-[400px] cursor-pointer rounded-lg overflow-hidden hover:w-[550px] hover:h-[550px] duration-300"
             >
               {/* พื้นหลังแบบโปร่งใส */}
               <div className="absolute inset-0 bg-white opacity-5"></div>
@@ -44,7 +44,7 @@ function Project() {
                   alt={`Project ${project.id}`}
                   fill
                   className="object-contain p-10"
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 90vw, (max-width: 7px) 50vw, 33vw "
                   priority={project.id === 1} // ให้โหลดภาพแรกเร็วที่สุด
                 />
               </div>
