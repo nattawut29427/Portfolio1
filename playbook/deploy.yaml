@@ -3,17 +3,11 @@
   gather_facts: false
   remote_user: root
   tasks:
-    - name: Stop existing container (if running)
-      shell: docker rm -f 66022747-nextjs-container || true
-
-    - name: Pull latest Docker image
-      shell: docker pull nattawut29427/66022747-nextjs:latest
-
-    - name: Run Next.js container
+    - name: Creating the Container
       docker_container:
-        name: 66022747-nextjs-container
-        image: nattawut29427/66022747-nextjs:latest
-        ports:
-          - "5424:3000"
-        state: started
-        restart_policy: always
+         name: 66022747-nextjs-container #docker container name
+         image: 66022747-nextjs:latest #docker image name
+         ports:
+           - "5434:80" #เลข port ตัวแรกคือเลข  port ที่รับมาจาก browser ตัวหลังคือ  port ของ docker (คงไว้ที่ 80 ถ้าเป็น nextjs project ก็ 3000)
+         state: started
+         restart: true
