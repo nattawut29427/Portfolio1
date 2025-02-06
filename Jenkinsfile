@@ -1,25 +1,32 @@
 pipeline {
     agent any
-    stages {      
-        stage("Copy file to Docker server"){
+
+    stages {
+        stage('Clone Repository') {
             steps {
-				//แก้ตรง team33-neogym ให้เป็นชื่อเดียวกับ pipeline job/item ที่สร้างใน jenkins
-                sh "scp -r /var/lib/jenkins/workspace/66022747-nextjs/* root@43.208.253.87:~/66022747-nextjs"
+                git branch: 'main', url: 'https://github.com/nattawut29427/Portfolio1.git'
             }
         }
-        
-        stage("Build Docker Image") {
+
+        stage('Build Docker Image') {
             steps {
-                //path yaml files
-				ansiblePlaybook playbook: '/var/lib/jenkins/workspace/66022747-nextjs/playbook/build.yaml'
-            }    
-        } 
-        
-        stage("Create Docker Container") {
+                sh 'docker build -t 66022747-nextjs .'
+            }
+        }
+
+        stage('Push Docker Image') {
             steps {
-                //path yaml files
-				ansiblePlaybook playbook: '/var/lib/jenkins/workspace/66022747-nextjs/playbook/deploy.yaml'
-            }    
-        } 
+                withDockerRegistry([credentialsId: 'docker-hub', url: '']) {
+                    sh 'docker tag 66022747-nextjs nattawut29427/66022747-nextjs:latest'
+                    sh 'docker push nattawut29427/66022747-nextjs:latest'
+                }
+            }
+        }
+
+        stage('Deploy with Ansible') {
+            steps {
+                sh 'ansible-playbook playbook/deploy.yaml'
+            }
+        }
     }
 }
