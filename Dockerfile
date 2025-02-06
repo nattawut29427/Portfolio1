@@ -1,2 +1,2 @@
 FROM nginx:latest
-COPY . /usr/share/nginx/nextjs
+COPY . /usr/share/nginx/tsx
