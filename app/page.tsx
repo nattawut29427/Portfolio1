@@ -14,6 +14,7 @@ export default function Home() {
         <div className="flex  flex-col font-light items-center justify-center text-center font-body text-white z-10 text-lg sm:text-2xl lg:text-3xl gap-4 mb-20">
           <p>HELLO IM “LIST” IM A DEVELOPER I BUILD MODERN WEB APPS</p>
           <p>WITH NEXT.JS AND TYPESCRIPT.</p>
+          <p>66022747</p>
         </div>
 
         {/* Footer Links */}
